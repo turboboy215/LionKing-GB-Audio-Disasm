@@ -5,61 +5,61 @@
 
 include "HARDWARE.INC"
 
-AudioROM equ $4000
-AudioRAM equ $C700
-WaveRAM equ $FF30
-SongCnt equ $0E
-SFXCnt equ $2B
+def AudioROM equ $4000
+def AudioRAM equ $C700
+def WaveRAM equ $FF30
+def SongCnt equ $0E
+def SFXCnt equ $2B
 
 ;Audio data equates
-tempo equ $F4
-loop equ $F5
-env equ $F6
-vib equ $F7
-rest equ $F8
-tie equ $F9
-duty equ $FA
-tpglobal equ $FB
-tp equ $FC
-sweep equ $FD
-end equ $FE
-exit equ $FF
+def tempo equ $F4
+def loop equ $F5
+def env equ $F6
+def vib equ $F7
+def rest equ $F8
+def tie equ $F9
+def duty equ $FA
+def tpglobal equ $FB
+def tp equ $FC
+def sweep equ $FD
+def end equ $FE
+def exit equ $FF
 
-endvib equ $80
+def endvib equ $80
 
 ;Lengths
-len1 equ $60
-len2 equ $61
-len3 equ $62
-len4 equ $63
-len5 equ $64
-len6 equ $65
-len7 equ $66
-len8 equ $67
-len9 equ $68
-len10 equ $69
-len11 equ $6A
-len12 equ $6B
-len13 equ $6C
-len14 equ $6D
-len15 equ $6E
-len16 equ $6F
-len17 equ $70
-len18 equ $71
-len19 equ $72
-len20 equ $73
-len21 equ $74
-len22 equ $75
-len23 equ $76
-len24 equ $77
-len25 equ $78
-len26 equ $79
-len27 equ $7A
-len28 equ $7B
-len29 equ $7C
-len30 equ $7D
-len31 equ $7E
-len32 equ $7F
+def len1 equ $60
+def len2 equ $61
+def len3 equ $62
+def len4 equ $63
+def len5 equ $64
+def len6 equ $65
+def len7 equ $66
+def len8 equ $67
+def len9 equ $68
+def len10 equ $69
+def len11 equ $6A
+def len12 equ $6B
+def len13 equ $6C
+def len14 equ $6D
+def len15 equ $6E
+def len16 equ $6F
+def len17 equ $70
+def len18 equ $71
+def len19 equ $72
+def len20 equ $73
+def len21 equ $74
+def len22 equ $75
+def len23 equ $76
+def len24 equ $77
+def len25 equ $78
+def len26 equ $79
+def len27 equ $7A
+def len28 equ $7B
+def len29 equ $7C
+def len30 equ $7D
+def len31 equ $7E
+def len32 equ $7F
 
 SECTION "Audio", ROMX[AudioROM], BANK[$1]
 
@@ -12217,123 +12217,123 @@ EndString:
 	
 SECTION "Audio RAM", WRAM0[AudioRAM]
 
-PlayFlag: ds 1
-C1TrigFlag: ds 1
-C2TrigFlag: ds 1
-C4TrigFlag: ds 1
-Tempo: ds 2
-RNG: ds 4
-BeatCounter: ds 1
-GlobalTrans: ds 1
-SongPlayFlag: ds 1
-C1Pos ds 2
-C1Start ds 2
-C1PatPos ds 2
-C1Trans ds 1
-C1Len ds 1
-C1Delay ds 1
-C1Sweep ds 1
-C1VibPos ds 1
-C1Vibrato ds 1
-C1Freq ds 2
-C1EnvLen ds 1
-C1EnvDelay ds 1
-C2Pos ds 2
-C2Start ds 2
-C2PatPos ds 2
-C2Trans ds 1
-C2Len ds 1
-C2Delay ds 1
-C2Sweep ds 1
-C2VibPos ds 1
-C2Vibrato ds 1
-C2Freq ds 2
-C2EnvLen ds 1
-C2EnvDelay ds 1
-C3Pos ds 2
-C3Start ds 2
-C3PatPos ds 2
-C3Trans ds 1
-C3Len ds 1
-C3Delay ds 1
-C3Sweep ds 1
-C3VibPos ds 1
-C3Vibrato ds 1
-C3Freq ds 2
-C3EnvLen ds 1
-C3EnvDelay ds 1
-C4Pos ds 2
-C4Start ds 2
-C4PatPos ds 2
-C4Trans ds 1
-C4Len ds 1
-C4Delay ds 1
-C4Sweep ds 1
-C4VibPos ds 1
-C4Vibrato ds 1
-C4Freq ds 2
-C4EnvLen ds 1
-C4EnvDelay ds 1
-Sweep ds 1
-NR11Val ds 1
-NR12Val ds 1
-NR13Val ds 1
-NR14Val ds 1
-NR21Val ds 1
-NR22Val ds 1
-NR23Val ds 1
-NR24Val ds 1
-NR30Val ds 1
-NR31Val ds 1
-NR32Val ds 1
-NR33Val ds 1
-NR34Val ds 1
-NR41Val ds 1
-NR42Val ds 1
-NR43Val ds 1
-NR44Val ds 1
-C1SFXLen ds 1
-C1SFXSlideCnt ds 1
-C1SFXFreqVal ds 2
-C1SFXSlideAmt ds 2
-C1SFXNR11Val ds 1
-C1SFXRNG ds 1
-C1SFXSign ds 1
-C1SFXSlideLen ds 1
-C1SFXNR12Val ds 1
-C1SFXSlideLoop ds 1
-C1SFXSpeed ds 1
-C1SFXNR13Val ds 1
-C1SFXNR14Val ds 1
-C1SFXSlidesLeft ds 1
-C1SFXTimer ds 1
-C2SFXLen ds 1
-C2SFXSlideCnt ds 1
-C2SFXFreqVal ds 2
-C2SFXSlideAmt ds 2
-C2SFXNR21Val ds 1
-C2SFXRNG ds 1
-C2SFXSign ds 1
-C2SFXSlideLen ds 1
-C2SFXNR22Val ds 1
-C2SFXSlideLoop ds 1
-C2SFXSpeed ds 1
-C2SFXNR23Val ds 1
-C2SFXNR24Val ds 1
-C2SFXSlidesLeft ds 1
-C2SFXTimer ds 1
-C4SFXLen ds 1
-C4SFXSlideCnt ds 1
-C4SFXFreqVal ds 2
-C4SFXSlideAmt ds 2
-C4SFXNR41Val ds 1
-C4SFXRNG ds 1
-C4SFXSign ds 1
-C4SFXSlideLen ds 1
-C4SFXNR42Val ds 1
-C4SFXSlideLoop ds 1
-C4SFXSpeed ds 1
-C4SFXNR43Val ds 1
-C4SFXNR44Val ds 1
-C4SFXSlidesLeft ds 1
-C4SFXTimer ds 1
+PlayFlag:: ds 1
+C1TrigFlag:: ds 1
+C2TrigFlag:: ds 1
+C4TrigFlag:: ds 1
+Tempo:: ds 2
+RNG:: ds 4
+BeatCounter:: ds 1
+GlobalTrans:: ds 1
+SongPlayFlag:: ds 1
+C1Pos: ds 2
+C1Start: ds 2
+C1PatPos: ds 2
+C1Trans: ds 1
+C1Len: ds 1
+C1Delay: ds 1
+C1Sweep: ds 1
+C1VibPos: ds 1
+C1Vibrato: ds 1
+C1Freq: ds 2
+C1EnvLen: ds 1
+C1EnvDelay: ds 1
+C2Pos: ds 2
+C2Start: ds 2
+C2PatPos: ds 2
+C2Trans: ds 1
+C2Len: ds 1
+C2Delay: ds 1
+C2Sweep: ds 1
+C2VibPos: ds 1
+C2Vibrato: ds 1
+C2Freq: ds 2
+C2EnvLen: ds 1
+C2EnvDelay: ds 1
+C3Pos: ds 2
+C3Start: ds 2
+C3PatPos: ds 2
+C3Trans: ds 1
+C3Len: ds 1
+C3Delay: ds 1
+C3Sweep: ds 1
+C3VibPos: ds 1
+C3Vibrato: ds 1
+C3Freq: ds 2
+C3EnvLen: ds 1
+C3EnvDelay: ds 1
+C4Pos: ds 2
+C4Start: ds 2
+C4PatPos: ds 2
+C4Trans: ds 1
+C4Len: ds 1
+C4Delay: ds 1
+C4Sweep: ds 1
+C4VibPos: ds 1
+C4Vibrato: ds 1
+C4Freq: ds 2
+C4EnvLen: ds 1
+C4EnvDelay: ds 1
+Sweep: ds 1
+NR11Val: ds 1
+NR12Val: ds 1
+NR13Val: ds 1
+NR14Val: ds 1
+NR21Val: ds 1
+NR22Val: ds 1
+NR23Val: ds 1
+NR24Val: ds 1
+NR30Val: ds 1
+NR31Val: ds 1
+NR32Val: ds 1
+NR33Val: ds 1
+NR34Val: ds 1
+NR41Val: ds 1
+NR42Val: ds 1
+NR43Val: ds 1
+NR44Val: ds 1
+C1SFXLen: ds 1
+C1SFXSlideCnt: ds 1
+C1SFXFreqVal: ds 2
+C1SFXSlideAmt: ds 2
+C1SFXNR11Val: ds 1
+C1SFXRNG: ds 1
+C1SFXSign: ds 1
+C1SFXSlideLen: ds 1
+C1SFXNR12Val: ds 1
+C1SFXSlideLoop: ds 1
+C1SFXSpeed: ds 1
+C1SFXNR13Val: ds 1
+C1SFXNR14Val: ds 1
+C1SFXSlidesLeft: ds 1
+C1SFXTimer: ds 1
+C2SFXLen: ds 1
+C2SFXSlideCnt: ds 1
+C2SFXFreqVal: ds 2
+C2SFXSlideAmt: ds 2
+C2SFXNR21Val: ds 1
+C2SFXRNG: ds 1
+C2SFXSign: ds 1
+C2SFXSlideLen: ds 1
+C2SFXNR22Val: ds 1
+C2SFXSlideLoop: ds 1
+C2SFXSpeed: ds 1
+C2SFXNR23Val: ds 1
+C2SFXNR24Val: ds 1
+C2SFXSlidesLeft: ds 1
+C2SFXTimer: ds 1
+C4SFXLen: ds 1
+C4SFXSlideCnt: ds 1
+C4SFXFreqVal: ds 2
+C4SFXSlideAmt: ds 2
+C4SFXNR41Val: ds 1
+C4SFXRNG: ds 1
+C4SFXSign: ds 1
+C4SFXSlideLen: ds 1
+C4SFXNR42Val: ds 1
+C4SFXSlideLoop: ds 1
+C4SFXSpeed: ds 1
+C4SFXNR43Val: ds 1
+C4SFXNR44Val: ds 1
+C4SFXSlidesLeft: ds 1
+C4SFXTimer: ds 1
